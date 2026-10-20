@@ -1,0 +1,22 @@
+name: Validate PR 2293 head
+
+on:
+  push:
+    branches:
+      - validate-2293
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 3ea76e853d7b2330ec877a98b05dd9eb62503f93
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Check filmcraft-ui-egui
+        run: cargo check -p filmcraft-ui-egui
+      - name: Test filmcraft-ui-egui
+        run: cargo test -p filmcraft-ui-egui --lib
