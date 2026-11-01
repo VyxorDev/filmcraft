@@ -34,6 +34,7 @@ mod interface_zoom_ui;
 mod keyboard_ui;
 mod keyframes_ui;
 mod links_ui;
+mod loop_active_ui;
 mod marked_playback_position;
 mod marker_edit_ui;
 mod mask_roundness_ui;
